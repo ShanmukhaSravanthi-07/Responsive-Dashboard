@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <style>
+            .row.content{
+                height: 550px;
+            }
+            .sidenav {
+                background: #fff;
+                height: 320%;
+            }
+            .row.content img{
+                padding: 20px;
+            }
+            .row.content li{
+                height: 50px;
+            }
+            .row .well{
+                background: #fff;
+            }
+            .dash span{
+                font-size: 30px;
+                font-weight: bold;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            }
+            .dash img{
+                display: inline-flex;
+                align-items:flex-end;
+                justify-content: right;
+            }
+            .row .view{
+                font-size: 25px;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                font-weight: 300;
+            }
+            .row .com, .number{
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                font-weight: 100;
+                font-size: 15px;
+                opacity: 0.5;
+                height: 29px;
+            }
+            .row .bar{
+                width: 1000px;
+                height: 44px;
+            }
+            .row .num{
+                font-size: 40px;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                color: rgb(58, 216, 58);
+                font-weight: 300;
+                text-align: center;
+            }
+            .row .btn{
+                text-align: center;
+                font-size: 20px;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                font-weight: bold;
+                color: blue;
+                width: 450px;
+                background: rgb(252, 252, 252);
+                height: 45px;
+                border-color: rgb(235, 232, 232);
+                opacity: 0.5;
+            }
+            .row .graph{
+                font-size: 40px;
+                text-align: center;
+                justify-content: center;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                font-weight: bold;
+            }
+            .row .scrs{
+                font-size: 15px;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                font-weight: 100;
+                text-align: justify;
+                justify-content: space-between;
+                align-items: center;
+                width: 500px;
+                height: 200px;
+            }
+            .row .hed{
+                font-size: 15px;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                font-weight: 100;
+                text-align: justify;
+                justify-content: space-between;
+                width: 250px;
+            }
+            .row .hed .active{
+                color: blue;
+            }
+            .row .mod{
+                font-size: 15px;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                font-weight: 100;
+                opacity: 0.5;
+            }
+            .row .ses{
+                font-size: 18px;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                font-weight: 200;
+            }
+            .row .date{
+                text-align: justify;
+                justify-content: space-between;
+                font-size: 15px;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                font-weight: 100;
+                opacity: 0.5;
+                width: 400px;
+            }
+            .row .act{
+                font-size: 25px;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                font-weight: 100;
+            }
+            .row .code, .web, .arc{
+                font-size: 20px;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                font-weight: 500;
+                height: 200px;
+            }
+            .row .ass, .task{
+                font-size: 20px;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                font-weight: 500;
+            }
+            .row h3{
+                font-size: 25px;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                font-weight: 300;
+            }
+            #box{
+                background: #F7F5FC;
+            }
+            .row h5{
+                text-align: center;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                font-weight: 100;
+                opacity: 0.5;
+            }
+            .row .hack{
+                font-size: 15px;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                font-weight: 500;
+                text-align: left;
+            }
+            .row h6{
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                opacity: 0.5;
+                width: 100px;
+                text-align: center;
+            }
+            .row .numb{
+                display: flex;
+                font-size: 15px;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                font-weight: 700;
+                color: rgb(77, 231, 77);
+                line-height: 1px;
+                width: 300px;
+                text-align: right;
+                justify-content: flex-end;
+            }
+            .row .image{
+                display: flex;
+                width: 300px;
+                align-items: flex-end;
+                justify-content:flex-end;
+                height: 11px;
+                line-height: 0px;
+            }
+            #but .btn{
+                width: 350px;
+                line-height: 10px;
+            }
+            .row .nu{
+                color: blue;
+                font-size: 40px;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                font-weight: 300;
+                text-align: center;
+            }
+            .row p{
+                height: 8px;
+                opacity: 0.5;
+            }
+            .row .pro{
+                line-height:30px;
+                height: 94px;
+            }
+            @media screen and (max-width: 640px) {
+                .row.content {
+                    height: auto;
+                    width: auto;
+                } 
+                .well{
+                    margin-bottom: 20px;
+                }
+                .sidenav{
+                    display: none;
+                }
+                .row .bar{
+                    width: auto;
+                }
+                .row .scrs{
+                    width: auto;
+                }
+                .row .btn{
+                    width: auto;
+                }
+                #but .btn{
+                    width: auto;
+                }
+              }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="row content">
+                    <div class="col-sm-1 sidenav">
+                        <img src="zenclass.png"> 
+                        <ul class="nav">
+                            <li class="active"><img src="1.png"></li>
+                            <li><img src="2.png"></li>
+                            <li><img src="3.png"></li>
+                            <li><img src="4.png"></li>
+                            <li><img src="5.png"></li>
+                            <li><img src="6.png"></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-11 head">
+                        <div class="dash">
+                            <span>Dashboard</span>
+                            <img src="7.png">
+                            <hr size="2" width="100%">
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-7">
+                                <div class="view">Overview</div>
+                                <div class="well">
+                                    <div class="com">Completion</div>
+                                    <div class="number">32/64</div>
+                                    <div class="bar">
+                                        <progress align="center" id="file" value="32" max="100" style="width:60%;height: 25px;"> 32% </progress>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-5">
+                                <div class="view">Attendance</div>
+                                <div class="well">
+                                    <div class="num">80%</div>
+                                    <button class="btn">Go to Classes</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-7">
+                                <div class="well">
+                                    <div class="graph">Graph</div>
+                                    <div class="scrs">
+                                        <img src="9.png">
+                                        <span>BatchAverageScore</span>
+                                        <img src="10.png">
+                                        <span>YourScore</span>
+                                        <img src="11.png">
+                                        <span>HighScore</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-5">
+                                <div class="well">
+                                    <div class="hed">
+                                        <span class="active">UpcomingClasses</span>
+                                        <span>GuviCourses</span><hr>
+                                    </div>
+                                    <div class="well">
+                                        <div class="mod">Module Name</div>
+                                        <span class="ses">Session Name</span>
+                                        <span class="date">June8, Tuesday</span>
+                                        <img src="12.png">
+                                    </div>
+                                    <div class="well">
+                                        <div class="mod">Module Name</div>
+                                        <span class="ses">Session Name</span>
+                                        <span class="date">June9,Wednesday</span>
+                                        <img src="13.png">
+                                    </div>
+                                    <div class="well">
+                                        <div class="mod">Module Name</div>
+                                        <span class="ses">Session Name</span>
+                                        <span class="date">June10,Thursday</span>
+                                        <img src="13.png">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="act">Activities</div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="well">
+                                    <h4 class="code">Codekata</h4>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="well">
+                                    <h4 class="web">Webkata</h4>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="well">
+                                    <h4 class="arc">MicroArc</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="well">
+                                    <span class="ass">Assessment</span>
+                                    <img src="16.png"><hr>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="well">
+                                    <span class="task">Tasks</span>&nbsp;
+                                    <img src="16.png"><hr>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <h3>Hackathons</h3>
+                                <div class="well" id="but">
+                                    <div class="well" id="box">
+                                        <h5>Your Average Score</h5>
+                                        <div class="num">75.5</div>
+                                    </div>
+                                    <div class="hack">#4   Hackathon 4</div>
+                                    <h6>30/06/2021</h6>
+                                    <div class="numb">76</div>
+                                    <div class="hack">#3   Hackathon 3</div>
+                                    <h6>24/06/2021</h6>
+                                    <div class="numb">75</div><br>
+                                    <button class="btn" style="font-size: 13px;">View All</button>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <h3>Mock Interviews</h3>
+                                <div class="well" id="but">
+                                    <div class="well" id="box">
+                                        <h5 id="int">Upcoming Interview</h5>
+                                        <div class="nu">30/06/2021</div>
+                                    </div>
+                                    <div class="hack">Interview</div>
+                                    <h6>30/06/2021</h6>
+                                    <div class="image">
+                                        <img src="13.png">
+                                    </div>
+                                    <div class="hack">Interview</div>
+                                    <h6>24/06/2021</h6>
+                                    <div class="image">
+                                        <img src="12.png">
+                                    </div>
+                                    <button class="btn" style="font-size: 13px;">View All</button>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <h3>Projects</h3>
+                                <div class="well" id="but">
+                                    <div class="pro">
+                                        <div class="hack">Project Name</div>
+                                        <p>30/06/2021</p>
+                                        <p>Neque tellus turpis sit at...</p>
+                                    </div>
+                                    <div class="pro">
+                                        <div class="hack">Project Name</div>
+                                        <p>30/06/2021</p>
+                                        <p>Neque tellus turpis sit at...</p>
+                                    </div>
+                                    <div class="pro">
+                                        <div class="hack">Project Name</div>
+                                        <p>30/06/2021</p>
+                                        <p>Neque tellus turpis sit at...</p>
+                                    </div>
+                                    <button class="btn" style="font-size: 13px;">View All</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </body>
+</html>
